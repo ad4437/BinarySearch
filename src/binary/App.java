@@ -35,7 +35,6 @@ public class App {
                         ages = ages.substring(ages.indexOf(",") + 2);
                         ppl.addPerson(new Person(name, age));
                     }
-                    ppl.sortByName();
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid Input");
                 }
@@ -50,6 +49,7 @@ public class App {
                 if (search.equals("linear")) {
                     i = ppl.linearSearch(name);
                 } else {
+                    ppl.sortByName();
                     i = ppl.binarySearch(name);
                 }
                 System.out.println("This Search took " + ppl.getComparisons() + " comparisons");

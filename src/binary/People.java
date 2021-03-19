@@ -36,7 +36,7 @@ public class People {
 
     public void deletePerson(int index) {
         for (int i = index; i < size; i++) {
-            ppl[i] = ppl[i + 1];
+            ppl[i] = (i != size - 1) ? ppl[i + 1] : ppl[i];
         }
         ppl[size - 1] = null;
         size--;
